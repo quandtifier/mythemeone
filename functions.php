@@ -8,11 +8,18 @@ function mythemeone_script_enqueue () {
 add_action('wp_enqueue_scripts', 'mythemeone_script_enqueue');
 
 function mythemeone_setup() {
-  //adds menu support to the admin page
+  //adds menus support and registers menus together
+  register_nav_menus(array('primary' => __('Primary Header Navigation'),
+                           'secondary' => __('Footer Navigation')));
+
+  /*
+  These calls were made on video3 to add nav menus but the WP docs show
+  the more elegant form used above.
+  Adds menu support to the admin page
   add_theme_support('menus');
-  //(slug for menu, description)
+  (slug for menu, description)
   register_nav_menu('primary', 'Primary Header Navigation');
-  register_nav_menu('secondary', 'Footer Navigation');
+  register_nav_menu('secondary', 'Footer Navigation');*/
 }
 //('when to trigger action', 'function triggered')
 add_action('init', 'mythemeone_setup');
