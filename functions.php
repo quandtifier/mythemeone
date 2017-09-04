@@ -23,3 +23,7 @@ function mythemeone_setup() {
 }
 //('when to trigger action', 'function triggered')
 add_action('init', 'mythemeone_setup');
+
+add_theme_support( 'custom-background' );
+add_theme_support( 'custom-header' );
+add_theme_support( 'post-thumbnails' );
